@@ -16,7 +16,10 @@ const config: Configuration = {
   module: {
     rules: [{
       test: /\.tsx?$/,
-      loader: 'ts-loader',
+      loader: '@sucrase/webpack-loader',
+      options: {
+        transforms: ['typescript', 'jsx']
+      },
       exclude: /node_modules/
     }]
   },
